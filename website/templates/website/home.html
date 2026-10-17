@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <h2>Meeting planner application from Tek-up</h2>
+    <h3>Lite des réunions</h3>
+    <p>Nombre de réunions: {{ nbr_meetings }}</p>
+    <ul>
+    {% for meeting in meetings %}
+        <div>
+                <a href="{% url 'meeting_detail' id=meeting.id %}">
+                    {{ meeting }}
+                </a>
+        </div>   
+         
+    {% endfor %}
+    
+    </ul>
+{% endblock %}
